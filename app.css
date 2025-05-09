@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.8rem;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.todo_form {
+  width: 40rem;
+
+  box-shadow: 0 0 5px #888;
+}
+.todo_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  color: rgb(108, 251, 203);
+  background-color: #333;
+}
+.todo_content {
+  padding: 1.5rem;
+}
+.todo_date {
+  height: 15rem;
+}
+.todo_inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.check_part {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.todo_work {
+  border: none;
+  outline: none;
+  height: 3rem;
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+.todo_icon,
+.todoBtn_icon,
+.trash_icon,
+.check_icon {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.trash_icon,
+.check_icon {
+  fill: red;
+}
+.todoBtn_icon {
+  fill: blue;
+}
+hr {
+  margin-bottom: 1.5rem;
+}
+.todo_btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background-color: #fff;
+  color: blue;
+}
