@@ -31,8 +31,20 @@ body {
 .todo_content {
   padding: 1.5rem;
 }
+.date {
+  height: 10rem;
+}
+.todo_time {
+  text-align: center;
+  font-size: 3.5rem;
+}
 .todo_date {
-  height: 15rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #888;
+}
+.todo_works {
+  height: 25rem;
 }
 .todo_inputs {
   display: flex;
@@ -62,10 +74,14 @@ body {
 .todo_icon,
 .todoBtn_icon,
 .trash_icon,
-.check_icon {
+.check_icon,
+.circle_icon {
   width: 2rem;
   height: 2rem;
   cursor: pointer;
+}
+.check_icon {
+  display: none;
 }
 .trash_icon,
 .check_icon {
