@@ -5,7 +5,9 @@ const trashIcon = document.querySelector(".trash_icon");
 const uncheckIcon = document.querySelector(".circle_icon");
 const checkIcon = document.querySelector(".check_icon");
 const todoWorks = document.querySelector(".todo_works");
+const todoWork = document.querySelector(".todo_work");
 const todoInput = document.querySelector(".todo_inputs");
+const todoReload = document.querySelector(".todo_reload");
 // show time
 const now = new Date();
 const hours = now.getHours().toString().padStart(2, "0");
@@ -90,19 +92,34 @@ todoBtn.addEventListener("click", function (e) {
   todoWorks.insertAdjacentHTML("afterbegin", html);
 });
 // remove todo input
-trashIcon.addEventListener("click", function () {
-  // todoInput.style.opacity = "0";
-  console.log("click");
+todoWorks.addEventListener("click", function (e) {
+  if (e.target.classList.contains("trash_icon")) {
+    e.target.closest(".todo_inputs").remove();
+  }
 });
 // check Icons
-uncheckIcon.addEventListener("click", function () {
-  uncheckIcon.style.display = "none";
-  checkIcon.style.display = "block";
-  checkIcon.style.backgroundColor = "green";
-  checkIcon.style.borderRadius = "50%";
-  checkIcon.style.color = "#fff";
+todoWorks.addEventListener("click", function (e) {
+  const item = e.target.closest(".check_part");
+  if (!item) return;
+
+  const circle = item.querySelector(".circle_icon");
+  const check = item.querySelector(".check_icon");
+  const todoText = item.querySelector(".todo_work");
+
+  if (e.target.classList.contains("circle_icon")) {
+    circle.style.display = "none";
+    check.style.display = "block";
+    check.style.backgroundColor = "green";
+    check.style.borderRadius = "50%";
+    check.style.color = "#fff";
+    todoText.style.opacity = "0.5";
+  } else if (e.target.classList.contains("check_icon")) {
+    check.style.display = "none";
+    circle.style.display = "block";
+    todoText.style.opacity = "1";
+  }
 });
-checkIcon.addEventListener("click", function () {
-  checkIcon.style.display = "none";
-  uncheckIcon.style.display = "block";
+// reload todo_page
+todoReload.addEventListener("click", function () {
+  todoWorks.textContent = "";
 });
